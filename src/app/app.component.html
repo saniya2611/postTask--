@@ -1,0 +1,81 @@
+
+<h1 class="bg-danger text-center text-dark">Posts Task</h1>
+
+<hr>
+<hr>
+<hr>
+
+<h3 class="bg-info mb-4 text-center">Example-1</h3>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <app-posts [postsInfo] ="postsInfo[0]"></app-posts>
+      <app-posts [postsInfo] ="postsInfo[1]"></app-posts>
+      <app-posts [postsInfo] ="postsInfo[2]"></app-posts>
+    </div>
+  </div>
+</div>
+
+<h3 class="bg-info mb-4 text-center">Example-2</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <app-posts1 [postsInfo1]="post" *ngFor="let post of posts1Info"></app-posts1>
+    </div>
+
+  </div>
+</div>
+
+<h3 class="bg-info text-center text-dark">Form And Tables</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="fName">first Name</label>
+        <input type="text" [(ngModel)]="fNameVal" id="fName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="lName">Last Name</label>
+        <input type="text" [(ngModel)]="lNameVal" id="lName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" [(ngModel)]="emailVal" id="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="lName">Contact</label>
+        <input type="text" [(ngModel)]="contactVal" id="contact" class="form-control">
+      </div>
+    <div class="text-right">
+      <button class="btn btn-primary" (click)="onAddStudent()">
+        Add Student
+      </button>
+    </div>
+  </div>
+    <div class="col-sm-6">
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Sr.No.</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let std of stdArray; index as i">
+            <td>{{i+1}}</td>
+            <td>{{std.fName}}</td>
+            <td>{{std.lName}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.contact}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
